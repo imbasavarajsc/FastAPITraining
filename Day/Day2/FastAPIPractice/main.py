@@ -16,6 +16,11 @@ def health():
 def create_something():
     return {"message":"Created"}
 #Path Parameters
-@app.get("/student/{usn}")
-def get_result(usn):
-    return {"Result":"Distinction","usn":usn}
+@app.get("/student/{rollno}")
+def get_result(rollno):
+    return {"Result":"Distinction","rollno":rollno}
+
+#Path Parameters with Type Hint 
+@app.get("/candidate/{rollno}")
+def get_candidate(rollno:int):
+    return {"Result":"Distinction","rollno":rollno,"type":str(type(rollno))}
